@@ -12,7 +12,6 @@ import org.springframework.web.bind.annotation.*;
 
 import java.io.IOException;
 import java.nio.file.Files;
-import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.Map;
 
@@ -93,7 +92,7 @@ public class ServerResource {
 
     @GetMapping(path = "/image/{fileName}", produces = IMAGE_PNG_VALUE)
     public byte[] getServerImage(@PathVariable("fileName") String fileName) throws IOException {
-        return Files.readAllBytes(Paths.get(System.getProperty("user.home") + "Desktop/Docs/Coding/IntelliJProjects/server manager application/server/src/main/resources/img" + fileName));
+        return Files.readAllBytes(Paths.get(System.getProperty("user.home") + "/Desktop/Docs/Coding/IntelliJProjects/server manager application/server/src/main/resources/img/" + fileName));
     }
 
 }
